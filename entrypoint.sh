@@ -1,6 +1,8 @@
-#!/usr/bin/env sh
+#!/bin/ash
 
+# Fix user/group IDs
 groupmod -o -g $GID abc
 usermod -o -u $UID abc
 
-exec su -c "$@" abc
+# Go!
+su -s /bin/ash -c "$@" abc
